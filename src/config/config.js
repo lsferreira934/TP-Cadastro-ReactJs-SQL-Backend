@@ -1,3 +1,4 @@
+require('dotenv').config();
 // // Configurando strings de conexão: desenvolvimento e produção
 // module.exports = {
 //   development: {
