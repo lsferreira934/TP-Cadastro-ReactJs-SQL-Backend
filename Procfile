@@ -1,1 +1,1 @@
-nodemon app.js
+npm start
