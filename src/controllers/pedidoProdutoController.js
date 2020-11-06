@@ -146,3 +146,20 @@ exports.All = async (req, res) => {
     res.status(400).json(`Erro ao buscar relatório: ${error}`);
   }
 };
+
+exports.Agrupamento = async (req, res) => {
+  try {
+    const [agrupamentoCompras] = await sequelize.query(`
+    select Codigo_Pedido, cliente, group_concat(produto) as 'produtos',  
+    group_concat(Valor_Unitário) as 'Valor Unitário' ,
+    group_concat(Quantidade) as 'Quantidade respectiva',
+    sum(Valor_Total) as 'Faturamento',  
+    Data_Pedido, 
+    Observação 
+ from vw_relatorioCompra group by Codigo_Pedido`);
+
+    res.json(agrupamentoCompras);
+  } catch (error) {
+    res.status(400).json(`Erro ao puxar relatório: ${error}`);
+  }
+};

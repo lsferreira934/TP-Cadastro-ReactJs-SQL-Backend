@@ -37,6 +37,7 @@ router.get('/relatoriocompras', PedidoProdutoController.Show);
 router.post('/pesquisacompra', PedidoProdutoController.Index);
 router.get('/compras', PedidoProdutoController.Compras);
 router.post('/compradetalhe', PedidoProdutoController.PedidoDetalhe);
+router.get('/agrupamento', PedidoProdutoController.Agrupamento);
 
 //Rotas teste
 router.get('/relatorio/:id', PedidoProdutoController.All);

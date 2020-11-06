@@ -29,7 +29,7 @@ const Cliente = sequelize.define(
       },
     },
     telefone: {
-      type: Sequelize.STRING(12),
+      type: Sequelize.STRING(16),
       allowNull: true,
     },
   },
