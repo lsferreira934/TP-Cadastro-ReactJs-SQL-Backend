@@ -163,3 +163,12 @@ exports.Agrupamento = async (req, res) => {
     res.status(400).json(`Erro ao puxar relatório: ${error}`);
   }
 };
+
+exports.Destroy = async (req, res) => {
+  try {
+    await PedidoProduto.destroy({ where: { id_pedido: req.params.id } });
+    res.json();
+  } catch (error) {
+    res.status(400).json(`Erro ao apagar o pedido: ${error}`);
+  }
+};
