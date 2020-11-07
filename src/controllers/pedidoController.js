@@ -73,22 +73,22 @@ exports.Show = async (req, res) => {
   }
 };
 
-exports.Destroy = async (req, res) => {
+exports.UpdateFirst = async (req, res) => {
   try {
-    const pedidoId = req.params.id;
-
-    const pedido = await Pedido.findOne({
-      where: { id: pedidoId },
+    const obsAtualizada = await Pedido.findOne({
+      where: { id_pedido: req.params.id },
     });
-
-    if (pedido === null) {
-      return res.json({
-        error: `Pedido não cadastrado! `,
-      });
+    console.log(obsAtualizada);
+    if (obsAtualizada === null) {
+      return res.json({ error: `Produto não localizado!` });
     }
-    const deletarPedido = await pedido.destroy();
-    res.json(deletarPedido);
+
+    await obsAtualizada.update(req.body);
+    res.json(
+      `Observação do pedido n° ${req.params.id} atualizada com sucesso!`
+    );
+    res.json(obsAtualizada);
   } catch (error) {
-    res.status(400).json(`Erro ao apagar o pedido: ${error}`);
+    res.status(400).json({ error: error.message });
   }
 };
