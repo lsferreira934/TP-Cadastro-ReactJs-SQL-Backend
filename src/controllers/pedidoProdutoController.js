@@ -168,7 +168,7 @@ exports.Destroy = async (req, res) => {
     const pedidoId = req.body.id_pedido;
 
     const pedido = await PedidoProduto.findOne({
-      where: { id_produto: pedidoId },
+      where: { id: pedidoId },
     });
 
     if (pedido === null) {
@@ -176,8 +176,8 @@ exports.Destroy = async (req, res) => {
         error: `Pedido não cadastrado! `,
       });
     }
-
-    await pedido.destroy();
+    const deletarPedido = await pedido.destroy();
+    res.json(deletarPedido);
   } catch (error) {
     res.status(400).json(`Erro ao apagar o pedido: ${error}`);
   }
