@@ -165,18 +165,19 @@ exports.Agrupamento = async (req, res) => {
 };
 exports.Destroy = async (req, res) => {
   try {
-    const pedido = await PedidoProduto.findByPk({
-      where: { id_produto: req.params.id },
+    const pedidoId = req.body.id_pedido;
+
+    const pedido = await PedidoProduto.findOne({
+      where: { id_produto: pedidoId },
     });
-    console.log(pedido);
+
     if (pedido === null) {
       return res.json({
         error: `Pedido não cadastrado! `,
       });
     }
 
-    // await pedido.destroy(req.body);
-    res.json(cliente);
+    await pedido.destroy();
   } catch (error) {
     res.status(400).json(`Erro ao apagar o pedido: ${error}`);
   }
