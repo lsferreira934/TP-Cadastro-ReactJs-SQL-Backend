@@ -13,6 +13,11 @@ app.use(express.json());
 // Adding cors (to use API's)
 app.use(cors());
 
+//
+app.get('/api', function (req, res, next) {
+  res.json({ msg: 'This is CORS-enabled for all origins!' });
+});
+
 // setting group's routes
 app.use('/api', routes);
 

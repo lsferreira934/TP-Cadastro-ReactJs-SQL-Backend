@@ -73,7 +73,7 @@ exports.Show = async (req, res) => {
   }
 };
 
-exports.destroy = async (req, res) => {
+exports.Destroy = async (req, res) => {
   try {
     const pedidoId = req.params.id;
 
