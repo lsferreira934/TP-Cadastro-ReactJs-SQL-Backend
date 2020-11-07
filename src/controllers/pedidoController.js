@@ -76,7 +76,7 @@ exports.Show = async (req, res) => {
 exports.UpdateFirst = async (req, res) => {
   try {
     const obsAtualizada = await Pedido.findOne({
-      where: { id_pedido: req.params.id },
+      where: { id: req.params.id },
     });
     console.log(obsAtualizada);
     if (obsAtualizada === null) {
