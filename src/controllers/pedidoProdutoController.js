@@ -163,8 +163,26 @@ exports.Agrupamento = async (req, res) => {
     res.status(400).json(`Erro ao puxar relatório: ${error}`);
   }
 };
-
 exports.Destroy = async (req, res) => {
+  try {
+    const pedido = await PedidoProduto.findByPk({
+      where: { id_produto: req.params.id },
+    });
+    console.log(pedido);
+    if (pedido === null) {
+      return res.json({
+        error: `Pedido não cadastrado! `,
+      });
+    }
+
+    // await pedido.destroy(req.body);
+    res.json(cliente);
+  } catch (error) {
+    res.status(400).json(`Erro ao apagar o pedido: ${error}`);
+  }
+};
+
+exports.DestroyAll = async (req, res) => {
   try {
     await PedidoProduto.destroy({ where: { id_pedido: req.params.id } });
     res.json();
