@@ -39,7 +39,7 @@ router.get('/compras', PedidoProdutoController.Compras);
 router.post('/compradetalhe', PedidoProdutoController.PedidoDetalhe);
 router.get('/agrupamento', PedidoProdutoController.Agrupamento);
 router.delete('/apagarpedidovarios/:id', PedidoProdutoController.DestroyAll);
-router.delete('/apagarpedido', PedidoProdutoController.Destroy);
+router.delete('/apagarpedido/:id', PedidoProdutoController.Destroy);
 
 //Rotas teste
 router.get('/relatorio/:id', PedidoProdutoController.All);

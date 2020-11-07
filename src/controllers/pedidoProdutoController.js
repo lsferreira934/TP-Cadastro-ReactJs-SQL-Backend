@@ -165,7 +165,7 @@ exports.Agrupamento = async (req, res) => {
 };
 exports.Destroy = async (req, res) => {
   try {
-    const pedidoId = req.body.id_pedido;
+    const pedidoId = req.params.id_pedido;
 
     const pedido = await PedidoProduto.findOne({
       where: { id: pedidoId },
