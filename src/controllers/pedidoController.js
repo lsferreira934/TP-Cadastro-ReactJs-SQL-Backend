@@ -72,3 +72,23 @@ exports.Show = async (req, res) => {
     res.status(400).json(`Erro ao emitir relatório: ${error}`);
   }
 };
+
+exports.destroy = async (req, res) => {
+  try {
+    const pedidoId = req.params.id;
+
+    const pedido = await Pedido.findOne({
+      where: { id: pedidoId },
+    });
+
+    if (pedido === null) {
+      return res.json({
+        error: `Pedido não cadastrado! `,
+      });
+    }
+    const deletarPedido = await pedido.destroy();
+    res.json(deletarPedido);
+  } catch (error) {
+    res.status(400).json(`Erro ao apagar o pedido: ${error}`);
+  }
+};

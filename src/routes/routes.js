@@ -28,6 +28,7 @@ router.delete('/produto/:id', ProdutoController.Destroy);
 router.post('/novopedido', PedidoController.Insert);
 router.put('/atualizarpedido/:id', PedidoController.Update);
 router.get('/todospedidos', PedidoController.Show);
+router.delete('/deletarpedido/:id', PedidoController.Destroy);
 
 // Rotas de "Atendimento, reltório"
 router.post('/pedidoproduto', PedidoProdutoController.Insert);
