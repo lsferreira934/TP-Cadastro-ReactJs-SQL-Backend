@@ -21,41 +21,46 @@ app.get('/', function (req, res, next) {
   res.json({
     Bem_Vindo: 'BEM VINDO A API SQUELIZE TPBACKEND',
     Link_frontend: 'https://tpfrontendunip.herokuapp.com/',
+    Link_gitHub:
+      'https://github.com/lsferreira934/TP-Cadastro-ReactJs-SQL-Backend',
+
     Todas_as_rotas_dispoiveis: {
       Rotas_de_Cliente: {
-        post: 'api/cliente',
-        get: 'api/cliente',
-        get: 'api/cliente/:id',
-        put: 'api/cliente/:id',
-        delete: 'api/cliente/:id',
+        post: 'https://tpbackendunip.herokuapp.com/api/cliente',
+        get: 'https://tpbackendunip.herokuapp.com/api/cliente',
+        get: 'https://tpbackendunip.herokuapp.com/api/cliente/:id',
+        put: 'https://tpbackendunip.herokuapp.com/api/cliente/:id',
+        delete: 'https://tpbackendunip.herokuapp.com/api/cliente/:id',
       },
       Rotas_de_Produto: {
-        post: 'api/produto',
-        get: 'api/produto',
-        get: 'api/produto/:id',
-        put: 'api/produto/:id',
-        delete: 'api/produto/:id',
+        post: 'https://tpbackendunip.herokuapp.com/api/produto',
+        get: 'https://tpbackendunip.herokuapp.com/api/produto',
+        get: 'https://tpbackendunip.herokuapp.com/api/produto/:id',
+        put: 'https://tpbackendunip.herokuapp.com/api/produto/:id',
+        delete: 'https://tpbackendunip.herokuapp.com/api/produto/:id',
       },
       Rotas_de_Pedido: {
-        post: 'api/novopedido',
-        put: 'api/atualizarpedido/:id',
-        get: 'api/todospedidos',
-        put: 'api/alterarprimeiropedido/:id',
+        post: 'https://tpbackendunip.herokuapp.com/api/novopedido',
+        put: 'https://tpbackendunip.herokuapp.com/api/atualizarpedido/:id',
+        get: 'https://tpbackendunip.herokuapp.com/api/todospedidos',
+        put:
+          'https://tpbackendunip.herokuapp.com/api/alterarprimeiropedido/:id',
       },
       Rotas_de_Atendimento_reltório: {
-        post: '/pedidoproduto',
+        post: 'https://tpbackendunip.herokuapp.com/api/pedidoproduto',
       },
       Rotas_de_relatórios: {
-        get: '/relatoriocompras',
-        post: '/pesquisacompra',
-        get: '/compras',
-        post: '/compradetalhe',
-        get: '/agrupamento',
-        delete: '/apagarpedidovarios/:id',
-        delete: '/apagarpedido/:id',
+        get: 'https://tpbackendunip.herokuapp.com/api/relatoriocompras',
+        post: 'https://tpbackendunip.herokuapp.com/api/pesquisacompra',
+        get: 'https://tpbackendunip.herokuapp.com/api/compras',
+        post: 'https://tpbackendunip.herokuapp.com/api/compradetalhe',
+        get: 'https://tpbackendunip.herokuapp.com/api/agrupamento',
+        delete:
+          'https://tpbackendunip.herokuapp.com/api/apagarpedidovarios/:id',
+        delete: 'https://tpbackendunip.herokuapp.com/api/apagarpedido/:id',
       },
       Rotas_teste: {
-        get: '/relatorio/:id',
+        get: 'https://tpbackendunip.herokuapp.com/api/relatorio/:id',
       },
     },
   });
