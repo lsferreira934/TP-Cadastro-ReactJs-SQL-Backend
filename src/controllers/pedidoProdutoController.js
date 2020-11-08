@@ -151,10 +151,10 @@ exports.Agrupamento = async (req, res) => {
   try {
     const [agrupamentoCompras] = await sequelize.query(`
     select Codigo_Pedido, cliente, group_concat(produto) as 'produtos',  
-    group_concat(Valor_Unitário) as 'Valor_Unitário' ,
-    group_concat(Quantidade) as 'Quantidade_respectiva',
-    sum(Valor_Total) as 'Faturamento',  
-    Data_Pedido, 
+    group_concat(Valor_Unitário) as 'valor_unitario' ,
+    group_concat(Quantidade) as 'quantidade_respectiva',
+    sum(Valor_Total) as 'faturamento',  
+    data_pedido, 
     Observação 
  from vw_relatorioCompra group by Codigo_Pedido`);
 
