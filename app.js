@@ -19,7 +19,7 @@ app.get('/api', function (req, res, next) {
 });
 app.get('/', function (req, res, next) {
   res.json({
-    Bem_Vindo: 'BEM VINDO A API SQUELIZE TPBACKEND',
+    Bem_Vindo: 'BEM VINDO A API NODEJS-SEQUELIZE-SQL TPBACKEND',
     Link_frontend: 'https://tpfrontendunip.herokuapp.com/',
     Link_gitHub:
       'https://github.com/lsferreira934/TP-Cadastro-ReactJs-SQL-Backend',
