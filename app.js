@@ -18,6 +18,45 @@ app.get('/api', function (req, res, next) {
   res.json({ msg: 'This is CORS-enabled for all origins!' });
 });
 
+app.get('/', function (req, res, next) {
+  res.json({
+  Rotas_de_Cliente:{
+  post:('api/cliente'),
+  get:('api/cliente'),
+  get:('api/cliente/:id'),
+  put:('api/cliente/:id'),
+  delete:('api/cliente/:id'),
+  },
+  Rotas_de_Produto:{
+  post:('api/produto'),
+  get:('api/produto'),
+  get:('api/produto/:id'),
+  put:('api/produto/:id'),
+  delete:('api/produto/:id'),
+},
+Rotas_de_Pedido:{
+  post:('api/novopedido'),
+  put:('api/atualizarpedido/:id'),
+  get:('api/todospedidos'),
+  put:('api/alterarprimeiropedido/:id'),
+},
+ Rotas_de_Atendimento_reltório:{
+  post:('v/pedidoproduto'),
+},
+Rotas_de_relatórios:{
+  get:('/relatoriocompras'),
+ post:('/pesquisacompra'),
+get:('/compras'),
+  post:('/compradetalhe'),
+  get:('/agrupamento'),
+ delete:('/apagarpedidovarios/:id'),
+  delete:('/apagarpedido/:id'),
+},
+ Rotas_teste:{
+  get:('/relatorio/:id'),
+ }
+});
+
 // setting group's routes
 app.use('/api', routes);
 
