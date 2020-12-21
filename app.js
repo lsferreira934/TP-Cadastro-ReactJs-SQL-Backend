@@ -17,6 +17,7 @@ app.use(cors());
 app.get('/api', function (req, res, next) {
   res.json({ msg: 'This is CORS-enabled for all origins!' });
 });
+
 app.get('/', function (req, res, next) {
   res.json({
     Bem_Vindo: 'BEM VINDO A API NODEJS-SEQUELIZE-SQL TPBACKEND',
